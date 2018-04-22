@@ -92,21 +92,21 @@ Player_Count = input("How many players? = ")
 if Player_Count == ('2'):
     print("Horizontal or Vertical Split?")
     Split_Control = input("(H)=Horizontal (V)=Vertical = ")
-    if Split_Control == ('H'):
+    if Split_Control == ('H' or 'h'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-    if Split_Control == ('V'):
+    if Split_Control == ('V' or 'v'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
         Res_Pos_P2 = (' '+str(int(screensizeW/2))+','+' 0,'+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
         
 if Player_Count == ('3'):
     print('Wide Screen on top or bottom?')
     Wide_Control = input("(T)=Top (B)=Bottom = ")
-    if Wide_Control == ("T"):
+    if Wide_Control == ("T" or 't'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-    if Wide_Control == ("B"):
+    if Wide_Control == ("B" or 'b'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
