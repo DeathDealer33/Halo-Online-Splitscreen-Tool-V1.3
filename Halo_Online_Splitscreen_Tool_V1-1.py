@@ -133,7 +133,7 @@ hWnd = user32.FindWindowW(u"Shell_traywnd", None)
 user32.ShowWindow(hWnd, SW_HIDE)    
 ############################################################################################
 #Handler Interval
-HandlerInterval = ('15000')#10 seconds
+HandlerInterval = ('15000')#15 seconds
 ############################################################################################
 #Read cfg and change gampad mode to 1 and save variable that existed, Do the same for all edit on cfg
 #Eventually add this as an option for keyboard usage on 1 instance
