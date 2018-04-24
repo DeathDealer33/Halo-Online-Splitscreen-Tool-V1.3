@@ -2,6 +2,7 @@
 <img src="https://i.imgur.com/QpEYrRo.png"/>
 
 #Features
+
 No need for multiple installs
 
 Automatic controller enabling/port handling
@@ -15,6 +16,7 @@ Configures Audio so no overlapping music tracks but instead one for all instaces
 Revert all settings so switching between single player and multiplayer with this will be seamless.
 
 #Planned features
+
 Enabling keyboard usage for one instance.
 
 Slightly better UI
