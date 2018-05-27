@@ -12,27 +12,27 @@ import time
 print('''
 ██╗  ██╗ █████╗ ██╗      ██████╗         ██████╗ ███╗   ██╗██╗     ██╗███╗   ██╗███████╗
 ██║  ██║██╔══██╗██║     ██╔═══██╗██╗    ██╔═══██╗████╗  ██║██║     ██║████╗  ██║██╔════╝
-███████║███████║██║     ██║   ██║╚═╝    ██║   ██║██╔██╗ ██║██║     ██║██╔██╗ ██║█████╗  
-██╔══██║██╔══██║██║     ██║   ██║██╗    ██║   ██║██║╚██╗██║██║     ██║██║╚██╗██║██╔══╝  
+███████║███████║██║     ██║   ██║╚═╝    ██║   ██║██╔██╗ ██║██║     ██║██╔██╗ ██║█████╗
+██╔══██║██╔══██║██║     ██║   ██║██╗    ██║   ██║██║╚██╗██║██║     ██║██║╚██╗██║██╔══╝
 ██║  ██║██║  ██║███████╗╚██████╔╝╚═╝    ╚██████╔╝██║ ╚████║███████╗██║██║ ╚████║███████╗
 ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝         ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
-                                                                                        
-███████╗██████╗ ██╗     ██╗████████╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗  
-██╔════╝██╔══██╗██║     ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║  
-███████╗██████╔╝██║     ██║   ██║   ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║  
-╚════██║██╔═══╝ ██║     ██║   ██║   ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║  
-███████║██║     ███████╗██║   ██║   ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║  
-╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝  
-                                                                                        
-████████╗ ██████╗  ██████╗ ██╗         ██╗   ██╗ ██╗   ██████╗                          
-╚══██╔══╝██╔═══██╗██╔═══██╗██║         ██║   ██║███║   ╚════██╗                         
-   ██║   ██║   ██║██║   ██║██║         ██║   ██║╚██║    █████╔╝                         
-   ██║   ██║   ██║██║   ██║██║         ╚██╗ ██╔╝ ██║   ██╔═══╝                          
-   ██║   ╚██████╔╝╚██████╔╝███████╗     ╚████╔╝  ██║██╗███████╗                         
-   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝      ╚═══╝   ╚═╝╚═╝╚══════╝                         
+
+███████╗██████╗ ██╗     ██╗████████╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗
+██╔════╝██╔══██╗██║     ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║
+███████╗██████╔╝██║     ██║   ██║   ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║
+╚════██║██╔═══╝ ██║     ██║   ██║   ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║
+███████║██║     ███████╗██║   ██║   ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║
+╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝
+
+████████╗ ██████╗  ██████╗ ██╗         ██╗   ██╗ ██╗   ██████╗
+╚══██╔══╝██╔═══██╗██╔═══██╗██║         ██║   ██║███║   ╚════██╗
+   ██║   ██║   ██║██║   ██║██║         ██║   ██║╚██║    █████╔╝
+   ██║   ██║   ██║██║   ██║██║         ╚██╗ ██╔╝ ██║   ██╔═══╝
+   ██║   ╚██████╔╝╚██████╔╝███████╗     ╚████╔╝  ██║██╗███████╗
+   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝      ╚═══╝   ╚═╝╚═╝╚══════╝
                                                                                         ''')
 print('Made by: Death_Dealer')
-print('Made for 0.6 and up.')
+print('Made for Eldewrito 0.6 and up.')
 ############################################################################################
 #ScreenResDetect
 user32 = ctypes.windll.user32
@@ -58,7 +58,7 @@ else:
     text_file = open(path, "w")
     text_file.write('Install_Dir: '+'"'+(infile)+'"')
     text_file.close()
-    
+
 #make .BACK of .cfg for eldorito to revert to after exit
 dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -69,7 +69,7 @@ with open(back, "w") as text_file:
         text_file.write(read)
         text_file.close
 '''
-#Gamepad Enabling        
+#Gamepad Enabling
 #Settings.Gamepad "1"
 dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -95,7 +95,7 @@ if Player_Count == ('2'):
     if Split_Control == ('V') or Split_Control == ('v'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
         Res_Pos_P2 = (' '+str(int(screensizeW/2))+','+' 0,'+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
-    
+
 if Player_Count == ('3'):
     print('Wide Screen on top or bottom?')
     Wide_Control = input("(T)=Top (B)=Bottom = ")
@@ -107,7 +107,7 @@ if Player_Count == ('3'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-    
+
 if Player_Count == ('4'):
     Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
     Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
@@ -129,7 +129,7 @@ if KB_Input == ('Y') or KB_Input == ('y'):
 ############################################################################################
 #Handler Interval
 HandlerInterval = ('15000')#10 seconds
-  
+
 ############################################################################################
 #make taskbar movable in layers
 
@@ -181,7 +181,7 @@ if Player_Count >= '2':
                 text_file.write(cfg_1+str(cp_num_new)+cfg_2)
                 text_file.close
         if KB_Player != ('1'):
-            #Gamepad Enabling        
+            #Gamepad Enabling
             #Settings.Gamepad "1"
             dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -232,7 +232,7 @@ if Player_Count >= '2':
     os.remove("bin/AHK/tempP1.ahk")
 ############################################################################################
 #PLAYER 2
-if Player_Count >= '2':    
+if Player_Count >= '2':
     #Player 2
     if KB_Input == ('Y') or KB_Input ==('y'):
         if KB_Player == ('2'):
@@ -249,7 +249,7 @@ if Player_Count >= '2':
                 text_file.write(cfg_1+str(cp_num_new)+cfg_2)
                 text_file.close
         if KB_Player != ('2'):
-            #Gamepad Enabling        
+            #Gamepad Enabling
             #Settings.Gamepad "1"
             dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -276,7 +276,7 @@ if Player_Count >= '2':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-    
+
     #Settings.MusicVolume "100"
     #Running it on instances 2 will fix for all other instances
     dir_path = os.path.dirname(os.path.realpath(infile))
@@ -291,11 +291,11 @@ if Player_Count >= '2':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-    
+
     script_P2 = ("""
     ;P2
     #NoTrayIcon
-    
+
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -345,7 +345,7 @@ if Player_Count >= '3':
     script_P3 = ("""
     ;P3
     #NoTrayIcon
-    
+
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -391,11 +391,11 @@ if Player_Count == '4':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-        
+
     script_P4 = ("""
     ;P4
     #NoTrayIcon
-    
+
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -442,4 +442,3 @@ with open(back, "w") as text_file:
         text_file.close
 input('Press any key to Exit.')
 ############################################################################################
-
