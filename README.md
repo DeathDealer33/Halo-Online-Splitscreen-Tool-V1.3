@@ -1,9 +1,22 @@
-# Halo-Online-Splitscreen-Tool-V1.1
+# Halo-Online-Splitscreen-Tool-V1.2
 <img src="https://i.imgur.com/QpEYrRo.png"/>
 Makes Splitscreen easy for Halo:Online V0.6+
 	
 	#Features
+	
+	V1.2*
+	
+	KB/Mouse for one instance
+	
+	*Bugfixes and improvements*
+	
+	No longer kills taskbar
+	
+	Backup of config will now stay completely intact if the app crashs or is restart without proper restore of the backup
 
+	Code cleanup and optimization:)
+	
+	V1.1*
 	No need for multiple installs
 
 	Automatic controller enabling/port handling
