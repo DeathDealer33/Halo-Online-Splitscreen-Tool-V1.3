@@ -1,5 +1,5 @@
 # Halo-Online-Splitscreen-Tool-V1.2
-<img src="https://i.imgur.com/QpEYrRo.png"/>
+<img src="https://i.imgur.com/7hetQGX.png"/>
 Makes Splitscreen easy for Halo:Online V0.6+
 	
 	#Features
