@@ -37,6 +37,8 @@ Makes Splitscreen easy for Halo:Online V0.6+
 	Slightly better UI
 
 	*suggestions welcome
+	
++For a full setup guide, see https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
 
 *A big thank you to the devs of eldorito, without there work this would not be possible:)
 
