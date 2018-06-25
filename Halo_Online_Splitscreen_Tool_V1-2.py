@@ -9,41 +9,36 @@ import ctypes
 from ctypes import wintypes
 import time
 ############################################################################################
+print('''
+██╗  ██╗ █████╗ ██╗      ██████╗         ██████╗ ███╗   ██╗██╗     ██╗███╗   ██╗███████╗
+██║  ██║██╔══██╗██║     ██╔═══██╗██╗    ██╔═══██╗████╗  ██║██║     ██║████╗  ██║██╔════╝
+███████║███████║██║     ██║   ██║╚═╝    ██║   ██║██╔██╗ ██║██║     ██║██╔██╗ ██║█████╗  
+██╔══██║██╔══██║██║     ██║   ██║██╗    ██║   ██║██║╚██╗██║██║     ██║██║╚██╗██║██╔══╝  
+██║  ██║██║  ██║███████╗╚██████╔╝╚═╝    ╚██████╔╝██║ ╚████║███████╗██║██║ ╚████║███████╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝         ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
+                                                                                        
+███████╗██████╗ ██╗     ██╗████████╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗  
+██╔════╝██╔══██╗██║     ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║  
+███████╗██████╔╝██║     ██║   ██║   ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║  
+╚════██║██╔═══╝ ██║     ██║   ██║   ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║  
+███████║██║     ███████╗██║   ██║   ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║  
+╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝  
+                                                                                        
+████████╗ ██████╗  ██████╗ ██╗         ██╗   ██╗ ██╗   ██████╗                          
+╚══██╔══╝██╔═══██╗██╔═══██╗██║         ██║   ██║███║   ╚════██╗                         
+   ██║   ██║   ██║██║   ██║██║         ██║   ██║╚██║    █████╔╝                         
+   ██║   ██║   ██║██║   ██║██║         ╚██╗ ██╔╝ ██║   ██╔═══╝                          
+   ██║   ╚██████╔╝╚██████╔╝███████╗     ╚████╔╝  ██║██╗███████╗                         
+   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝      ╚═══╝   ╚═╝╚═╝╚══════╝                         
+                                                                                        ''')
+print('Made by: Death_Dealer')
+print('Made for 0.6 and up.')
+############################################################################################
 #ScreenResDetect
 user32 = ctypes.windll.user32
 screensizeW = user32.GetSystemMetrics(0)
 screensizeH = user32.GetSystemMetrics(1)
 
-user32 = ctypes.WinDLL("user32")
-
-SW_HIDE = 0
-SW_SHOW = 5
-
-print('''
-██╗  ██╗ █████╗ ██╗      ██████╗         ██████╗ ███╗   ██╗██╗     ██╗███╗   ██╗███████╗  
-██║  ██║██╔══██╗██║     ██╔═══██╗██╗    ██╔═══██╗████╗  ██║██║     ██║████╗  ██║██╔════╝  
-███████║███████║██║     ██║   ██║╚═╝    ██║   ██║██╔██╗ ██║██║     ██║██╔██╗ ██║█████╗    
-██╔══██║██╔══██║██║     ██║   ██║██╗    ██║   ██║██║╚██╗██║██║     ██║██║╚██╗██║██╔══╝    
-██║  ██║██║  ██║███████╗╚██████╔╝╚═╝    ╚██████╔╝██║ ╚████║███████╗██║██║ ╚████║███████╗  
-╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝         ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝  
-                                                                                          
-███████╗██████╗ ██╗     ██╗████████╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗    
-██╔════╝██╔══██╗██║     ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║    
-███████╗██████╔╝██║     ██║   ██║   ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║    
-╚════██║██╔═══╝ ██║     ██║   ██║   ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║    
-███████║██║     ███████╗██║   ██║   ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║    
-╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝    
-                                                                                          
-████████╗ ██████╗  ██████╗ ██╗         ██╗   ██╗ ██╗   ██╗                                
-╚══██╔══╝██╔═══██╗██╔═══██╗██║         ██║   ██║███║  ███║                                
-   ██║   ██║   ██║██║   ██║██║         ██║   ██║╚██║  ╚██║                                
-   ██║   ██║   ██║██║   ██║██║         ╚██╗ ██╔╝ ██║   ██║                                
-   ██║   ╚██████╔╝╚██████╔╝███████╗     ╚████╔╝  ██║██╗██║                                
-   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝      ╚═══╝   ╚═╝╚═╝╚═╝                                           
-''')
-print('Made by: Death_Dealer')
-print('Made for 0.6 and up.')
-############################################################################################
 #Screen Setup
 root = Tk()
 root.withdraw()
@@ -73,6 +68,8 @@ back = (dir_path+"/dewrito_prefs.BACK")
 with open(back, "w") as text_file:
         text_file.write(read)
         text_file.close
+'''
+#Gamepad Enabling        
 #Settings.Gamepad "1"
 dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -86,85 +83,68 @@ cp_num_new = int(1)
 with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-
+'''
 Player_Count = input("How many players? = ")
 
 if Player_Count == ('2'):
     print("Horizontal or Vertical Split?")
     Split_Control = input("(H)=Horizontal (V)=Vertical = ")
-    if Split_Control == ('H'):
+    if Split_Control == ('H') or Split_Control == ('h'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-    if Split_Control == ('h'):
-        Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-        Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-    if Split_Control == ('V'):
+    if Split_Control == ('V') or Split_Control == ('v'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
         Res_Pos_P2 = (' '+str(int(screensizeW/2))+','+' 0,'+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
-    if Split_Control == ('v'):
-        Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
-        Res_Pos_P2 = (' '+str(int(screensizeW/2))+','+' 0,'+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))    
+    
 if Player_Count == ('3'):
     print('Wide Screen on top or bottom?')
     Wide_Control = input("(T)=Top (B)=Bottom = ")
-    if Wide_Control == ("T"):
+    if Wide_Control == ('T') or Wide_Control == ('t'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-    if Wide_Control == ("t"):
-        Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-        Res_Pos_P2 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-        Res_Pos_P3 = (' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-    if Wide_Control == ("B"):
+    if Wide_Control == ('B') or Wide_Control == ('b'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-    if Wide_Control == ('b'):
-        Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-        Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
-        Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))    
+    
 if Player_Count == ('4'):
     Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
     Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
     Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
     Res_Pos_P4 = (' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
 
-hWnd = user32.FindWindowW(u"Shell_traywnd", None)
-user32.ShowWindow(hWnd, SW_HIDE)    
+
+KB_Input = input('Use Keyboard? Y/N=')
+
+if KB_Input == ('N') or KB_Input == ('n'):
+    pass
+
+if KB_Input == ('Y') or KB_Input == ('y'):
+    for x in range(1,int(Player_Count)+1):
+        print("["+str(x)+"] "+"Player "+str(x))
+    KB_Player = input('Witch Player will have KB/Mouse?:')
+
+
 ############################################################################################
 #Handler Interval
-HandlerInterval = ('15000')#15 seconds
+HandlerInterval = ('15000')#10 seconds
+  
 ############################################################################################
-#Read cfg and change gampad mode to 1 and save variable that existed, Do the same for all edit on cfg
-#Eventually add this as an option for keyboard usage on 1 instance
-#turn music volume down on all instances except P1
-#Settings.MusicVolume "100"
-
-#Revert cfg at end of script
-
-############################################################################################
-#Remove taskbar
+#make taskbar movable in layers
 
 startup = ('''
 #NoTrayIcon
-Run, '''+(infile)+'''
 
-WinGetTitle, Title, A
+WinSet, alwaysontop, toggle, ahk_class Shell_TrayWnd
 
-If WinExist("ahk_class Shell_TrayWnd")
-{
-WinHide, ahk_class Shell_TrayWnd
-WinHide, Start ahk_class Button
-;menu tray,noicon ;use this instead for persistent scripts
-return
-} else { 
-WinShow, ahk_class Shell_TrayWnd
-WinShow, Start ahk_class Button
-;menu tray,icon ;use this to re-enable
-Return
-}
 ''')
+with open("bin/AHK/startup.ahk", "w") as script_r:
+        script_r.write(str(startup))
+        script_r.close()
+subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/startup.ahk"])
 ############################################################################################
+#Port Change
 #reset port to 0 if its not at 0
 dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -183,9 +163,38 @@ with open(cfg, "w") as text_file:
 #Could be set to 0 on an instance to enable keyboard use.
 #Settings.Gamepad "1"
 ############################################################################################
-
+#PLAYER 1
 if Player_Count >= '2':
     #Player 1
+    if KB_Input == ('Y') or KB_Input ==('y'):
+        if KB_Player == ('1'):
+            dir_path = os.path.dirname(os.path.realpath(infile))
+            cfg = (dir_path+"/dewrito_prefs.cfg")
+            text_file = open(cfg, "r")
+            read = (text_file.read())
+            input_loc = read.find("Settings.Gamepad ")
+            cp_num = read[input_loc+18:input_loc+18+1]
+            cfg_1 = (read[:input_loc+18])
+            cfg_2 = read[input_loc+18+1:]
+            cp_num_new = int(0)
+        with open(cfg, "w") as text_file:
+                text_file.write(cfg_1+str(cp_num_new)+cfg_2)
+                text_file.close
+        if KB_Player != ('1'):
+            #Gamepad Enabling        
+            #Settings.Gamepad "1"
+            dir_path = os.path.dirname(os.path.realpath(infile))
+            cfg = (dir_path+"/dewrito_prefs.cfg")
+            text_file = open(cfg, "r")
+            read = (text_file.read())
+            input_loc = read.find("Settings.Gamepad ")
+            cp_num = read[input_loc+18:input_loc+18+1]
+            cfg_1 = (read[:input_loc+18])
+            cfg_2 = read[input_loc+18+1:]
+            cp_num_new = int(1)
+            with open(cfg, "w") as text_file:
+                text_file.write(cfg_1+str(cp_num_new)+cfg_2)
+                text_file.close
     script_P1 = ("""
     ;P1
     #NoTrayIcon
@@ -207,9 +216,8 @@ if Player_Count >= '2':
 
     WinSet, Style, -0xC00000, %NewTitle%
 
-    ;WinActivate, %NewTitle%
-    
-    ;WinSet, Top
+    WinSet, Top
+    Winset, Bottom,, ahk_class Shell_TrayWnd
     ;Sleep, 10
     ;WinSet, AlwaysOnTop, on, %NewTitle%
     """)
@@ -222,10 +230,39 @@ if Player_Count >= '2':
     subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/tempP1.ahk"])
 
     os.remove("bin/AHK/tempP1.ahk")
-    ############################################################################################
+############################################################################################
+#PLAYER 2
 if Player_Count >= '2':    
     #Player 2
-
+    if KB_Input == ('Y') or KB_Input ==('y'):
+        if KB_Player == ('2'):
+            dir_path = os.path.dirname(os.path.realpath(infile))
+            cfg = (dir_path+"/dewrito_prefs.cfg")
+            text_file = open(cfg, "r")
+            read = (text_file.read())
+            input_loc = read.find("Settings.Gamepad ")
+            cp_num = read[input_loc+18:input_loc+18+1]
+            cfg_1 = (read[:input_loc+18])
+            cfg_2 = read[input_loc+18+1:]
+            cp_num_new = int(0)
+        with open(cfg, "w") as text_file:
+                text_file.write(cfg_1+str(cp_num_new)+cfg_2)
+                text_file.close
+        if KB_Player != ('2'):
+            #Gamepad Enabling        
+            #Settings.Gamepad "1"
+            dir_path = os.path.dirname(os.path.realpath(infile))
+            cfg = (dir_path+"/dewrito_prefs.cfg")
+            text_file = open(cfg, "r")
+            read = (text_file.read())
+            input_loc = read.find("Settings.Gamepad ")
+            cp_num = read[input_loc+18:input_loc+18+1]
+            cfg_1 = (read[:input_loc+18])
+            cfg_2 = read[input_loc+18+1:]
+            cp_num_new = int(1)
+            with open(cfg, "w") as text_file:
+                text_file.write(cfg_1+str(cp_num_new)+cfg_2)
+                text_file.close
     #Edit CFG to change controller port
     dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -241,7 +278,7 @@ if Player_Count >= '2':
         text_file.close
     
     #Settings.MusicVolume "100"
-    #Running it on instances 2 should fix for all other instances
+    #Running it on instances 2 will fix for all other instances
     dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
     text_file = open(cfg, "r")
@@ -275,8 +312,8 @@ if Player_Count >= '2':
     WinMove, %NewTitle%, ,"""+Res_Pos_P2+"""
 
     WinSet, Style, -0xC00000, %NewTitle%
-
-    ;WinSet, AlwaysOnTop, on, %NewTitle%
+    WinSet, Top
+    Winset, Bottom,, ahk_class Shell_TrayWnd
     """)
 
     with open("bin/AHK/tempP2.ahk", "w") as script_r:
@@ -286,7 +323,8 @@ if Player_Count >= '2':
     subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/tempP2.ahk"])
 
     os.remove("bin/AHK/tempP2.ahk")
-    ############################################################################################
+############################################################################################
+#PLAYER 3
 if Player_Count >= '3':
     #Player 3
 
@@ -324,8 +362,8 @@ if Player_Count >= '3':
     WinMove, %NewTitle%, ,"""+Res_Pos_P3+"""
 
     WinSet, Style, -0xC00000, %NewTitle%
-
-    ;WinSet, AlwaysOnTop, on, %NewTitle%
+    WinSet, Top
+    Winset, Bottom,, ahk_class Shell_TrayWnd
     """)
 
     with open("bin/AHK/tempP3.ahk", "w") as script_r:
@@ -335,7 +373,8 @@ if Player_Count >= '3':
     subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/tempP3.ahk"])
 
     os.remove("bin/AHK/tempP3.ahk")
-    ############################################################################################
+############################################################################################
+#PLAYER 4
 if Player_Count == '4':
     #Player 4
 
@@ -373,8 +412,8 @@ if Player_Count == '4':
     WinMove, %NewTitle%, ,"""+Res_Pos_P4+"""
 
     WinSet, Style, -0xC00000, %NewTitle%
-
-    ;WinSet, AlwaysOnTop, on, %NewTitle%
+    WinSet, Top
+    Winset, Bottom,, ahk_class Shell_TrayWnd
     """)
 
     with open("bin/AHK/tempP4.ahk", "w") as script_r:
@@ -384,28 +423,23 @@ if Player_Count == '4':
     subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/tempP4.ahk"])
 
     os.remove("bin/AHK/tempP4.ahk")
-    ############################################################################################
-    #reset port to 0 for single player use after script closes
-    dir_path = os.path.dirname(os.path.realpath(infile))
-    cfg = (dir_path+"/dewrito_prefs.cfg")
-    text_file = open(cfg, "r")
-    read = (text_file.read())
-    input_loc = read.find("Input.ControllerPort")
-    cp_num = read[input_loc+22:input_loc+22+1]
-    cfg_1 = (read[:input_loc+22])
-    cfg_2 = read[input_loc+22+1:]
-    cp_num_new = int(0)
-    with open(cfg, "w") as text_file:
-        text_file.write(cfg_1+str(cp_num_new)+cfg_2)
-        text_file.close
-    ############################################################################################
-input('Press any key to Exit. (Brings taskbar back)')
+
+############################################################################################
+#input('Press any key to Exit.')
 #delete cfg for instal dir and rename .BACK to .cfg
 text_file.close
 time.sleep(3)
 os.remove(dir_path+"/dewrito_prefs.cfg")
-os.rename(dir_path+"/dewrito_prefs.BACK", dir_path+"/dewrito_prefs.cfg")
-hWnd = user32.FindWindowW(u"Shell_traywnd", None)
-user32.ShowWindow(hWnd, SW_SHOW)
+
+#restore info from .back to .cfg
+dir_path = os.path.dirname(os.path.realpath(infile))
+cfg = (dir_path+"/dewrito_prefs.BACK")
+text_file = open(cfg, "r")
+read = (text_file.read())
+back = (dir_path+"/dewrito_prefs.cfg")
+with open(back, "w") as text_file:
+        text_file.write(read)
+        text_file.close
+input('Press any key to Exit.')
 ############################################################################################
 
