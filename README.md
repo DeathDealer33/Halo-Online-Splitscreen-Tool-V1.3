@@ -1,44 +1,34 @@
-# Halo-Online-Splitscreen-Tool-V1.2
-<img src="https://i.imgur.com/7hetQGX.png"/>
-Makes Splitscreen easy for Halo:Online V0.6+
-	
-	#Features
-	
-	V1.2*
-	
-	KB/Mouse for one instance
-	
-	*Bugfixes and improvements*
-	
-	No longer kills taskbar
-	
-	Backup of config will now stay completely intact if the app crashs or is restart without proper restore of the backup
+# Halo-Online-Splitscreen-Tool-V1.1
 
-	Code cleanup and optimization:)
-	
-	V1.1*
-	No need for multiple installs
+Makes Splitscreen easy for Halo:Online v0.6+
 
-	Automatic controller enabling/port handling
+For a full setup guide, see https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
 
-	Automatically size,rename,strip borders, and places windows based on a very simple selection
-
-	Save install directory so it can ask you only once for that.
-
-	Configures Audio so no overlapping music tracks but instead one for all instaces.
-
-	Revert all settings so switching between single player and multiplayer with this will be seamless.
+![](https://i.imgur.com/7hetQGX.png)
 
 
-	#Planned features
+## Features
 
-	Enabling keyboard usage for one instance.
+No need for multiple installs
 
-	Slightly better UI
+Automatic controller enabling/port handling
 
-	*suggestions welcome
-	
-+For a full setup guide, see https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
+Automatically size, rename, strip borders, and places windows based on a very simple selection
+
+Save install directory so it can ask you only once for that.
+
+Configures Audio so no overlapping music tracks but instead one for all instances.
+
+Revert all settings so switching between single player and multiplayer with this will be seamless.
+
+
+## Planned features
+
+Enabling keyboard usage for one instance.
+
+Slightly better UI
+
+*suggestions welcome
 
 *A big thank you to the devs of eldorito, without there work this would not be possible:)
 
