@@ -1,9 +1,3 @@
-# Halo-Online-Splitscreen-Tool
-
-Makes Splitscreen easy for Halo:Online v0.6+
-
-For a full setup guide, see https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
-
 # Halo-Online-Splitscreen-Tool-V1.2
 <img src="https://i.imgur.com/7hetQGX.png"/>
 Makes Splitscreen easy for Halo:Online V0.6+
@@ -34,6 +28,9 @@ Configures Audio so no overlapping music tracks but instead one for all instance
 
 Revert all settings so switching between single player and multiplayer with this will be seamless.
 
+##Setup Guide
+
+ https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
 
 ## Planned features
 
