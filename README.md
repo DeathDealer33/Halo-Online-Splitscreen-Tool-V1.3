@@ -1,13 +1,26 @@
-# Halo-Online-Splitscreen-Tool-V1.1
+# Halo-Online-Splitscreen-Tool
 
 Makes Splitscreen easy for Halo:Online v0.6+
 
 For a full setup guide, see https://gist.github.com/MadLittleMods/dd0aa40c62fe1e200e8aa4f8b4fed605
 
-![](https://i.imgur.com/7hetQGX.png)
+# Halo-Online-Splitscreen-Tool-V1.2
+<img src="https://i.imgur.com/7hetQGX.png"/>
+Makes Splitscreen easy for Halo:Online V0.6+
+	
+#Features
+	
+V1.2*
+	
+KB/Mouse for one instance
+	
+*Bugfixes and improvements*
+	
+No longer kills taskbar
+	
+Backup of config will now stay completely intact if the app crashs or is restart without proper restore of the backup
 
-
-## Features
+V1.1*
 
 No need for multiple installs
 
@@ -23,8 +36,6 @@ Revert all settings so switching between single player and multiplayer with this
 
 
 ## Planned features
-
-Enabling keyboard usage for one instance.
 
 Slightly better UI
 
