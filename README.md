@@ -3,9 +3,13 @@
 Makes Splitscreen easy for Halo:Online V0.6+
 	
 #Features
+
 V1.3*
+
 Added compatibility for Rainbow Serpent Leak
+
 Added cache memory increase feature for Rainbow Serpent Leak, Some maps will not boot without this.
+
 Code Cleanup.
 
 V1.2*
