@@ -8,31 +8,12 @@ from tkinter.filedialog import askopenfilename
 import ctypes
 from ctypes import wintypes
 import time
-############################################################################################
-print('''
-██╗  ██╗ █████╗ ██╗      ██████╗         ██████╗ ███╗   ██╗██╗     ██╗███╗   ██╗███████╗
-██║  ██║██╔══██╗██║     ██╔═══██╗██╗    ██╔═══██╗████╗  ██║██║     ██║████╗  ██║██╔════╝
-███████║███████║██║     ██║   ██║╚═╝    ██║   ██║██╔██╗ ██║██║     ██║██╔██╗ ██║█████╗
-██╔══██║██╔══██║██║     ██║   ██║██╗    ██║   ██║██║╚██╗██║██║     ██║██║╚██╗██║██╔══╝
-██║  ██║██║  ██║███████╗╚██████╔╝╚═╝    ╚██████╔╝██║ ╚████║███████╗██║██║ ╚████║███████╗
-╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝         ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
-
-███████╗██████╗ ██╗     ██╗████████╗███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗
-██╔════╝██╔══██╗██║     ██║╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║
-███████╗██████╔╝██║     ██║   ██║   ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║
-╚════██║██╔═══╝ ██║     ██║   ██║   ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║
-███████║██║     ███████╗██║   ██║   ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║
-╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝
-
-████████╗ ██████╗  ██████╗ ██╗         ██╗   ██╗ ██╗   ██████╗
-╚══██╔══╝██╔═══██╗██╔═══██╗██║         ██║   ██║███║   ╚════██╗
-   ██║   ██║   ██║██║   ██║██║         ██║   ██║╚██║    █████╔╝
-   ██║   ██║   ██║██║   ██║██║         ╚██╗ ██╔╝ ██║   ██╔═══╝
-   ██║   ╚██████╔╝╚██████╔╝███████╗     ╚████╔╝  ██║██╗███████╗
-   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝      ╚═══╝   ╚═╝╚═╝╚══════╝
-                                                                                        ''')
+############################################################################################                       
+print("Halo Online Splitscreen Tool V1.3")
+print('---------------------------------')
 print('Made by: Death_Dealer')
-print('Made for Eldewrito 0.6 and up.')
+print('Made for 0.6 and up.')
+print('---------------------------------')
 ############################################################################################
 #ScreenResDetect
 user32 = ctypes.windll.user32
@@ -49,18 +30,40 @@ if os.path.exists(path):
     read = (text_file.read())
     input_loc = read.find("Install_Dir: ")
     cp_num = read[input_loc+14:]
-    cp_num = cp_num.rstrip('"')
+    split_name = cp_num.split('"', 1)[0]
+    split_arg = cp_num.split('"', 1)[1]
+    cp_num = split_name.rstrip('"')
     infile = cp_num
+    dir_path = os.path.dirname(os.path.realpath(infile))
+    infile = cp_num + split_arg
     print('Install Found. - '+(cp_num))
 else:
-    infile =  filedialog.askopenfilename(title = "Select eldorado.exe ..",
-        filetypes = (("Executable","*.exe"),("all files","*.*")))
-    text_file = open(path, "w")
-    text_file.write('Install_Dir: '+'"'+(infile)+'"')
+    infile =  filedialog.askopenfilename(title = "Select launcher..",
+        filetypes = (("Game shortcut or Executable","*"),("all files","*.*")))
+    dir_path = os.path.dirname(os.path.realpath(infile))
+    print('!!!*This wil only be asked once*!!!')
+    print('*Rainbow Serpent leak feature*')
+    cache_inc = input('Run with increased cache memory? Y/N :')
+    if cache_inc == ('Y'):
+        cache_inc_num = input('New Cache amount: default(1200) : ')
+        text_file = open(path, "w")
+        text_file.write('Install_Dir: '+'"'+(infile)+'"'+' / -cache-memory-increase'+' '+cache_inc_num)
+        text_file.close()
+        text_file = open(path, "r")
+        read = (text_file.read())
+        input_loc = read.find("Install_Dir: ")
+        cp_num = read[input_loc+14:]
+        split_name = cp_num.split('"', 1)[0]
+        split_arg = cp_num.split('"', 1)[1]
+        cp_num = split_name.rstrip('"')
+        infile = cp_num + split_arg
+    else:
+        pass
+        text_file = open(path, "w")
+        text_file.write('Install_Dir: '+'"'+(infile)+'"')
     text_file.close()
-
+    
 #make .BACK of .cfg for eldorito to revert to after exit
-dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
 text_file = open(cfg, "r")
 read = (text_file.read())
@@ -69,7 +72,7 @@ with open(back, "w") as text_file:
         text_file.write(read)
         text_file.close
 '''
-#Gamepad Enabling
+#Gamepad Enabling        
 #Settings.Gamepad "1"
 dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
@@ -84,6 +87,7 @@ with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
 '''
+
 Player_Count = input("How many players? = ")
 
 if Player_Count == ('2'):
@@ -95,7 +99,7 @@ if Player_Count == ('2'):
     if Split_Control == ('V') or Split_Control == ('v'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
         Res_Pos_P2 = (' '+str(int(screensizeW/2))+','+' 0,'+str(int(screensizeW/2))+','+' '+str(int(screensizeH)))
-
+    
 if Player_Count == ('3'):
     print('Wide Screen on top or bottom?')
     Wide_Control = input("(T)=Top (B)=Bottom = ")
@@ -107,7 +111,7 @@ if Player_Count == ('3'):
         Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
         Res_Pos_P3 = (' 0,'+' '+str(int(screensizeH/2))+','+' '+str(int(screensizeW))+','+' '+str(int(screensizeH/2)))
-
+    
 if Player_Count == ('4'):
     Res_Pos_P1 = (' 0,'+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
     Res_Pos_P2 = (str(int(screensizeW/2))+','+' 0,'+' '+str(int(screensizeW/2))+','+' '+str(int(screensizeH/2)))
@@ -129,10 +133,9 @@ if KB_Input == ('Y') or KB_Input == ('y'):
 ############################################################################################
 #Handler Interval
 HandlerInterval = ('15000')#10 seconds
-
+  
 ############################################################################################
 #make taskbar movable in layers
-
 startup = ('''
 #NoTrayIcon
 
@@ -146,7 +149,6 @@ subprocess.call(["bin/AHK/AutoHotkeyU64.exe", "bin/AHK/startup.ahk"])
 ############################################################################################
 #Port Change
 #reset port to 0 if its not at 0
-dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.cfg")
 text_file = open(cfg, "r")
 read = (text_file.read())
@@ -162,13 +164,15 @@ with open(cfg, "w") as text_file:
 #Set this to 1 to enable gamepad support if its not already enabled.
 #Could be set to 0 on an instance to enable keyboard use.
 #Settings.Gamepad "1"
+print('---------------------------------')
+print('Booting instances, please wait...')
+print('---------------------------------')
 ############################################################################################
 #PLAYER 1
 if Player_Count >= '2':
     #Player 1
     if KB_Input == ('Y') or KB_Input ==('y'):
         if KB_Player == ('1'):
-            dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
             text_file = open(cfg, "r")
             read = (text_file.read())
@@ -181,9 +185,8 @@ if Player_Count >= '2':
                 text_file.write(cfg_1+str(cp_num_new)+cfg_2)
                 text_file.close
         if KB_Player != ('1'):
-            #Gamepad Enabling
+            #Gamepad Enabling        
             #Settings.Gamepad "1"
-            dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
             text_file = open(cfg, "r")
             read = (text_file.read())
@@ -232,11 +235,10 @@ if Player_Count >= '2':
     os.remove("bin/AHK/tempP1.ahk")
 ############################################################################################
 #PLAYER 2
-if Player_Count >= '2':
+if Player_Count >= '2':    
     #Player 2
     if KB_Input == ('Y') or KB_Input ==('y'):
         if KB_Player == ('2'):
-            dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
             text_file = open(cfg, "r")
             read = (text_file.read())
@@ -249,9 +251,8 @@ if Player_Count >= '2':
                 text_file.write(cfg_1+str(cp_num_new)+cfg_2)
                 text_file.close
         if KB_Player != ('2'):
-            #Gamepad Enabling
+            #Gamepad Enabling        
             #Settings.Gamepad "1"
-            dir_path = os.path.dirname(os.path.realpath(infile))
             cfg = (dir_path+"/dewrito_prefs.cfg")
             text_file = open(cfg, "r")
             read = (text_file.read())
@@ -264,7 +265,6 @@ if Player_Count >= '2':
                 text_file.write(cfg_1+str(cp_num_new)+cfg_2)
                 text_file.close
     #Edit CFG to change controller port
-    dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
     text_file = open(cfg, "r")
     read = (text_file.read())
@@ -276,10 +276,9 @@ if Player_Count >= '2':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-
+    
     #Settings.MusicVolume "100"
     #Running it on instances 2 will fix for all other instances
-    dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
     text_file = open(cfg, "r")
     read = (text_file.read())
@@ -291,11 +290,11 @@ if Player_Count >= '2':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-
+    
     script_P2 = ("""
     ;P2
     #NoTrayIcon
-
+    
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -327,9 +326,7 @@ if Player_Count >= '2':
 #PLAYER 3
 if Player_Count >= '3':
     #Player 3
-
     #Edit CFG to change controller port
-    dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
     text_file = open(cfg, "r")
     read = (text_file.read())
@@ -345,7 +342,7 @@ if Player_Count >= '3':
     script_P3 = ("""
     ;P3
     #NoTrayIcon
-
+    
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -379,7 +376,6 @@ if Player_Count == '4':
     #Player 4
 
     #Edit CFG to change controller port
-    dir_path = os.path.dirname(os.path.realpath(infile))
     cfg = (dir_path+"/dewrito_prefs.cfg")
     text_file = open(cfg, "r")
     read = (text_file.read())
@@ -391,11 +387,11 @@ if Player_Count == '4':
     with open(cfg, "w") as text_file:
         text_file.write(cfg_1+str(cp_num_new)+cfg_2)
         text_file.close
-
+        
     script_P4 = ("""
     ;P4
     #NoTrayIcon
-
+    
     Run, """+(infile)+"""
 
     Sleep, """+(HandlerInterval)+"""
@@ -425,14 +421,12 @@ if Player_Count == '4':
     os.remove("bin/AHK/tempP4.ahk")
 
 ############################################################################################
-#input('Press any key to Exit.')
 #delete cfg for instal dir and rename .BACK to .cfg
 text_file.close
 time.sleep(3)
 os.remove(dir_path+"/dewrito_prefs.cfg")
 
 #restore info from .back to .cfg
-dir_path = os.path.dirname(os.path.realpath(infile))
 cfg = (dir_path+"/dewrito_prefs.BACK")
 text_file = open(cfg, "r")
 read = (text_file.read())
