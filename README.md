@@ -10,6 +10,8 @@ Added compatibility for Rainbow Serpent Leak
 
 Added cache memory increase feature for Rainbow Serpent Leak, Some maps will not boot without this.
 
+Delete your .pref file and reconfigure to add increased memory cache.
+
 Code Cleanup.
 
 V1.2*
